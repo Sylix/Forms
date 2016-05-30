@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.StarMenu.StartOptionsPage"
+             Icon="hamburger.png"
+             Title="Xamarin Forms"
+             BackgroundColor="White">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0,80,0,0" Android="16,80,0,0" />
+  </ContentPage.Padding>
+
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="Fill">
+      <ListView x:Name="MenuList"
+                RowHeight="48"
+                SeparatorVisibility="None"
+                GroupDisplayBinding="{Binding Title}"
+                IsGroupingEnabled="True">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"/>
+                  <ColumnDefinition Width="20"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="{Binding IconSource}" WidthRequest="24" HeightRequest="24"/>
+                <Label Grid.Column="2" Text="{Binding Title}"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center"/>
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+
+</ContentPage>

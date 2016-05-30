@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.Pages.ListWithCustomCellsPage">
+  <ContentPage.Content>
+    <StackLayout>
+      <Label
+        Text="Escalação"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        FontSize="35" />
+
+      <ListView x:Name="JogadoresList" CachingStrategy="RecycleElement"
+                ItemsSource="{Binding}" ItemSelected="JogadoresList_OnItemSelected"
+                IsPullToRefreshEnabled="True" Refreshing="JogadoresList_OnRefreshing">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              
+              <ViewCell.ContextActions>
+                <MenuItem Text="More" Clicked="OnMore" CommandParameter="{Binding}"/>
+                <MenuItem Text="Delete" IsDestructive="True" Clicked="OnDelete" CommandParameter="{Binding}"/>
+              </ViewCell.ContextActions>
+              
+              <Grid>
+                
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="25"/>
+                  <RowDefinition Height="15"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="60"/>
+                  <ColumnDefinition Width="12"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.RowSpan="2" Text="{Binding Numero}" Font="32" VerticalOptions="Center" HorizontalOptions="End"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Nome}" FontSize="16" VerticalOptions="End" />
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Posicao}" FontSize="10" VerticalOptions="Start" />
+              </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.MainPage">
+  
+  <!--
+  <StackLayout x:Name="MainLayout">
+    <Label x:Name="Informacao" VerticalOptions="Start" HorizontalOptions="Center" />
+    <BoxView x:Name="Retangulo" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+  </StackLayout>
+  -->
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="16" />
+  </ContentPage.Padding>
+  
+  <StackLayout>
+    <Label VerticalOptions="Start" HorizontalOptions="Center">
+      <Label.Text>
+        <OnPlatform x:TypeArguments="x:String">
+          <OnPlatform.iOS>Estou no iOS</OnPlatform.iOS>
+          <OnPlatform.Android>Estou no Android</OnPlatform.Android>
+          <OnPlatform.WinPhone>Estou no Windows</OnPlatform.WinPhone>
+        </OnPlatform>
+      </Label.Text>
+    </Label>
+    
+    <BoxView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+      <BoxView.Color>
+        <OnPlatform x:TypeArguments="Color">
+          <OnPlatform.iOS>Purple</OnPlatform.iOS>
+          <OnPlatform.Android>#2196F3</OnPlatform.Android>
+        </OnPlatform>
+      </BoxView.Color>
+    </BoxView>
+  </StackLayout>
+  
+</ContentPage>

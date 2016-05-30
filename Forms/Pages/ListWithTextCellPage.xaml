@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.Pages.ListWithTextCellPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.Android>8</OnPlatform.Android>
+      <OnPlatform.iOS>10, 30, 10, 10</OnPlatform.iOS>
+      <OnPlatform.WinPhone>20</OnPlatform.WinPhone>
+    </OnPlatform>
+  </ContentPage.Padding>
+
+  <ContentPage.Content>
+    <StackLayout>
+      <Label 
+        Text="Escalação"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        FontSize="35" />
+      
+      <ListView x:Name="JogadoresList">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell
+              Text="{Binding Nome}"
+              Detail="{Binding Posicao}"/>
+            
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

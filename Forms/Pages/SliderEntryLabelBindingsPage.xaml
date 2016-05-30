@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.Pages.SliderEntryLabelBindingsPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.Android>8</OnPlatform.Android>
+      <OnPlatform.iOS>10, 30, 10, 10</OnPlatform.iOS>
+      <OnPlatform.WinPhone>20</OnPlatform.WinPhone>
+    </OnPlatform>
+  </ContentPage.Padding>
+
+  <StackLayout>
+    <Entry x:Name="Valor"
+           Placeholder="Valor"
+           BindingContext="{x:Reference Name=BindingSlider}"
+           Text="{Binding Value, Mode=TwoWay}"
+           WidthRequest="150"
+           HorizontalOptions="End"
+           HorizontalTextAlignment="End"
+           Keyboard="Numeric" />
+
+    <Label BindingContext="{x:Reference Name=BindingSlider}"
+           Text="{Binding Path=Value, StringFormat='O valor atual do slide é {0:N1}'}"
+           FontAttributes="Bold"
+           FontSize="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+    <Label BindingContext="{x:Reference Name=BindingSlider}"
+           Text="{Binding Maximum, StringFormat='O valor maximo do slide é {0:F1}'}"
+           FontAttributes="Bold"
+           FontSize="Large"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+    <Slider x:Name="BindingSlider"
+            
+            Maximum="10"
+            VerticalOptions="CenterAndExpand" />
+  </StackLayout>
+</ContentPage>

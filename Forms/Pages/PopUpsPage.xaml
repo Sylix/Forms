@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Forms.Pages.PopUpsPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.Android>8</OnPlatform.Android>
+      <OnPlatform.iOS>10, 30, 10, 10</OnPlatform.iOS>
+      <OnPlatform.WinPhone>20</OnPlatform.WinPhone>
+    </OnPlatform>
+  </ContentPage.Padding>
+  
+  <StackLayout Spacing="5">
+    
+    <Label Text="Page.DisplayAlert" Style="{DynamicResource SubtitleStyle}"/>
+    <Button Text="Alert: OK" Clicked="AlertOk_OnClicked"/>
+    <Button Text="Alert: 2 Opcoes" Clicked="AlertTwoOptions_OnClicked"/>
+    
+    
+    <Label Text="Page.DisplayActionSheet" Style="{DynamicResource SubtitleStyle}" Margin="0, 0, 0, 60"/>
+    <Button Text="ActionSheet: Cancel" Clicked="ActionSheetCancel_OnClicked"/>
+    <Button Text="ActionSheet: Destruction" Clicked="ActionSheetDestruction_OnClicked"/>
+    
+  </StackLayout>
+</ContentPage>
