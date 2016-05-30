@@ -14,7 +14,7 @@
     
     <Label Text="Page.DisplayAlert" Style="{DynamicResource SubtitleStyle}"/>
     <Button Text="Alert: OK" Clicked="AlertOk_OnClicked"/>
-    <Button Text="Alert: 2 Opcoes" Clicked="AlertTwoOptions_OnClicked"/>
+    <Button Text="Alert: 2 Opções" Clicked="AlertTwoOptions_OnClicked"/>
     
     
     <Label Text="Page.DisplayActionSheet" Style="{DynamicResource SubtitleStyle}" Margin="0, 0, 0, 60"/>
